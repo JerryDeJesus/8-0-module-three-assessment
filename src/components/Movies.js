@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import { Component } from 'react'
 
 class Movies extends Component{
   constructor(){
@@ -12,7 +12,7 @@ class Movies extends Component{
   fetchMovies = () => {
     fetch(`https://ghibliapi.herokuapp.com/films/`)
     .then((res) => {
-      return res.json();
+      return res.json()
     })
     .then((data) => {
       this.setState({
@@ -22,20 +22,19 @@ class Movies extends Component{
   }
 
   componentDidMount = () => {
-    this.fetchMovies();
-  };
+    this.fetchMovies()
+  }
 
   handleDropdownChange = (e) => {
     
     const chosenMovie = this.state.movieInfo.find((movie) => {
-      return movie.title === e.target.value;
+      return movie.title === e.target.value
     });
 
     this.setState({
       currentMovie: chosenMovie,
     });
-    console.log(this.state.currentMovie);
-  };
+  }
 
   render(){
     const movieOptions = this.state.movieInfo.map((movieItem) => {

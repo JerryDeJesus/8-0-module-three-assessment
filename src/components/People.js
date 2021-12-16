@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import { Component } from 'react'
 
 class People extends Component{
   constructor(){
@@ -12,9 +12,9 @@ class People extends Component{
 
   handleInput = (e) => {
     this.setState({
-      searchValue: e.target.value,
-    });
-  };
+      searchValue: e.target.value
+    })
+  }
 
   handleSubmit = (e) => {
     e.preventDefault();
@@ -24,13 +24,12 @@ class People extends Component{
     this.setState({
       displayedPerson: person
     })
-
   }
 
   fetchPeople = () => {
     fetch(`https://ghibliapi.herokuapp.com/people`)
     .then((res) => {
-      return res.json();
+      return res.json()
     })
     .then((data) => {
       this.setState({
@@ -40,14 +39,10 @@ class People extends Component{
   }
   
   componentDidMount = () => {
-    this.fetchPeople();
+    this.fetchPeople()
   }
 
   render(){
-    // const display = <h3>Name: {this.state.displayedPerson.name}</h3>
-    // <h3>Age: {this.state.displayedPerson.age}</h3>
-    // <h3>Gender: {this.state.displayedPerson.gender}</h3>
-    
     return (
       <div className="people">
         <h1>Search for a Person</h1>
