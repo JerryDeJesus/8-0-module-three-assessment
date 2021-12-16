@@ -5,7 +5,8 @@ class People extends Component{
     super()
     this.state = {
       characterInfo: [],
-      searchValue: ""
+      searchValue: "",
+      displayedPerson:[]
     }
   }
 
@@ -20,6 +21,10 @@ class People extends Component{
     const person = this.state.characterInfo.find((character) => {
       return character.name.toLowerCase() === this.state.searchValue.toLowerCase()
     })
+    this.setState({
+      displayedPerson: person
+    })
+
   }
 
   fetchPeople = () => {
@@ -39,6 +44,10 @@ class People extends Component{
   }
 
   render(){
+    // const display = <h3>Name: {this.state.displayedPerson.name}</h3>
+    // <h3>Age: {this.state.displayedPerson.age}</h3>
+    // <h3>Gender: {this.state.displayedPerson.gender}</h3>
+    
     return (
       <div className="people">
         <h1>Search for a Person</h1>
@@ -51,7 +60,13 @@ class People extends Component{
           />
           <button>Submit</button>
         </form>
-        <h3>this is the spot</h3>
+        <h3>
+          {this.state.displayedPerson
+            ? this.state.displayedPerson.name
+            : "Not Found"}{" "}
+        </h3>
+        <h3>{this.state.displayedPerson?.age}</h3>
+        <h3>{this.state.displayedPerson?.gender}</h3>
       </div>
     )
   }
