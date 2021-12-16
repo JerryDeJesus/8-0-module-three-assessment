@@ -1,5 +1,7 @@
 .app {
   text-align: center;
+  background-color: coral;
+  height:100vh;
 }
 
 #home-icon{
@@ -12,17 +14,28 @@ li{
   margin:50px;
 }
 
+ul{
+  margin: 0;
+  padding-top:23px;
+  padding-left: 0;
+}
+
+ul a{
+  text-decoration: none;
+  color:black
+}
+
+ul a:hover{
+  background-color: white;
+  transition: 0.5s;
+}
+
 .navbar-item{
   display: inline;
-  margin: 10%;
+  margin: 1 auto;
 }
 
 #navbar{
   height: 100px;
-  margin-top: -16px;
-  background-color: cyan;
-}
-
-body{
-  background-color:coral;
+  background-color: aquamarine;
 }

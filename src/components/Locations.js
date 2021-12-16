@@ -56,6 +56,8 @@ class Locations extends Component{
           <h3>Terrain: {location.terrain}</h3>
         </li>
         )
+      }else{
+        return null
       }
     })
     // {this.state.currentMovie?.title}
